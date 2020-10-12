@@ -16,7 +16,7 @@ maintainer:          sergisiba@gmail.com
 -- category:
 build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
-extensions:          OverloadedStrings, LambdaCase
+extensions:          OverloadedStrings, LambdaCase, TemplateHaskell
 
 executable tui-progress
   main-is:             Main.hs
