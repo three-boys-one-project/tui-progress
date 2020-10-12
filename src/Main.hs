@@ -136,6 +136,7 @@ draw (FormSt st) = [C.vCenter $ C.hCenter form <=> C.hCenter help]
     str
       $  "- All values are integers! The values are the minutes!\n"
       <> "- Esc quit, mouse interacts with fields"
+      <> "- Enter starts progress bar"
 draw (ProgressSt st) = [C.vCenter $ C.hCenter $ prog]
  where
   prog =
@@ -145,7 +146,7 @@ draw (ProgressSt st) = [C.vCenter $ C.hCenter $ prog]
     (padBottom (Pad 2) . hLimit 50)
     [ P.progressBar (Just "Total progress") (sh ^. totalProgress)
     , P.progressBar (Just (show $ sh ^. pLabel)) (sh ^. pProgress)
-    , str "Press Esc to quit"
+    , C.hCenter $ str "Press Esc to quit"
     ]
 
 
